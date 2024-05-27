@@ -37,6 +37,7 @@ export default defineConfig(({ mode }) => {
       // ↓路径别名，主要是这部分
       alias: {
         "@": resolve(__dirname, "./src"),
+        'vue': 'vue/dist/vue.esm-bundler.js'
       },
     },
     base: VITE_BASE_PATH,

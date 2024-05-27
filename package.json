@@ -1,7 +1,7 @@
 {
   "name": "vue3-music",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "scripts": {
     "serve": "vite",
@@ -10,8 +10,13 @@
   },
   "dependencies": {
     "@vueuse/core": "^10.9.0",
+    "axios": "^1.7.2",
     "element-plus": "^2.7.3",
-    "vue": "^3.3.8"
+    "pinia": "^2.1.7",
+    "pinia-plugin-persist": "^1.0.0",
+    "vue": "^3.3.8",
+    "vue3-perfect-scrollbar": "^2.0.0",
+    "vuedraggable": "^2.24.3"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.5.0",

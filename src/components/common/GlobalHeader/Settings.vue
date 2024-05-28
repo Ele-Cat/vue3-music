@@ -3,11 +3,12 @@
     <Setting class="icon" @click="settingsVisible = true" />
   </el-icon>
   <el-drawer v-model="settingsVisible" title="设置" direction="rtl" append-to-body lock-scroll class="settings-drawer">
-    <span>Hi, there!</span>
+    <Settings />
   </el-drawer>
 </template>
 
 <script setup>
+import Settings from '../Settings/Index.vue'
 
 const settingsVisible = ref(false)
 </script>

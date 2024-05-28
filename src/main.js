@@ -14,11 +14,15 @@ import pinia from "@/store/pinia";
 // 注册全局组件、指令
 import ui from "@/components/libs";
 
+// 引入国际化
+import VueI18n from './language';
+
 const app = createApp(App);
 
 app.use(ElementPlus, {
   locale: zhCn,
 });
-app.use(ui);
 app.use(pinia);
+app.use(ui);
+app.use(VueI18n);
 app.mount("#app");

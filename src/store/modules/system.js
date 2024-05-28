@@ -6,29 +6,19 @@ import _ from "lodash";
 
 const settings = {
   title: "",
-  darkMode: false,
+  lang: "zh_CN",
 };
 
-export const useSystemStore = defineStore("ifishSystem", {
+export const useSystemStore = defineStore("musicSystem", {
   state: () => {
     return {
+      settings,
       activeMenu: "home", // 当前聚焦的工具栏目
     };
   },
   actions: {
     changeTitle(title) {
       this.settings.title = title;
-    },
-    changeMode() {
-      this.settings.darkMode = !this.settings.darkMode;
-      let html = document.documentElement;
-      if (!this.settings.darkMode) {
-        // html添加theme 属性值
-        html.setAttribute("theme", "");
-      } else {
-        // html添加theme 属性值
-        html.setAttribute("theme", "dark");
-      }
     },
     randomWallpaper() {
       // https://api.lolimi.cn/?action=doc&id=98

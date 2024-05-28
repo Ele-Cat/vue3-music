@@ -1,29 +1,29 @@
-import { message, notification } from "ant-design-vue";
+import { ElMessage, ElNotification } from 'element-plus'
 
 // 在浏览器中上部的提示
 export const toast = ({
   type = "success",
-  content = "提示语",
+  message = "提示语",
   duration = 3,
 }) => {
-  message.open({
+  ElMessage({
     type,
-    content,
+    message,
     duration,
-  });
+  })
 };
 
 // 在浏览器右上角的提示
 export const notify = ({
   type = "success",
   title = "提示",
-  content = "内容",
+  message = "内容",
   duration = 3,
 }) => {
-  notification.open({
+  ElNotification({
     type,
-    message: title,
-    description: content,
+    title,
+    message,
     duration,
-  });
+  })
 };

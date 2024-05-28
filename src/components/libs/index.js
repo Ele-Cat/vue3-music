@@ -5,6 +5,7 @@ const importFn = import.meta.glob('./*.vue');
 //引入
 import { PerfectScrollbarPlugin } from 'vue3-perfect-scrollbar';
 import 'vue3-perfect-scrollbar/style.css';
+import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 // console.dir(Object.keys(importFn)) // 文件名称数组
 
 export default {
@@ -18,6 +19,10 @@ export default {
       // 注册组件
       app.component(componentName, component);
     });
+
+    for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
+      app.component(key, component)
+    }
 
     app.use(PerfectScrollbarPlugin, {
       watchOptions: true,

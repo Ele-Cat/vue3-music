@@ -1,23 +1,19 @@
 <template>
   <el-config-provider namespace="ep">
+    <GlobalHeader />
     <el-switch v-model="isDark" inline-prompt>123</el-switch>
-    <el-button type="primary" @click="show = true">打开</el-button>
-    <p>你好</p>
-    <a href="">ddd</a>
 
-    <el-card title="卡片">
-      sadsa
-    </el-card>
-
-    <IDialog :visible="show" title="123">
-      123
-    </IDialog>
+    <div>
+      <p v-for="n in 200">{{ n }}大撒大声地大阿萨德阿萨德阿萨德按说大三打撒大三打撒按说萨达仨打撒大三仨打撒萨达大萨达沙发上发生过撒</p>
+    </div>
+    
   </el-config-provider>
 </template>
 
 <script setup>
 // import { ref } from 'vue';
 import { isDark } from '@/hooks/theme';
+import GlobalHeader from '@/components/common/GlobalHeader/Index.vue';
 
 const show = ref(false)
 </script>

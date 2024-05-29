@@ -11,4 +11,13 @@ export default {
     language: "语言",
     shortCuts: "快捷键",
   },
+  shortCuts: {
+    playOrPause: "播放/暂停",
+    previous: "上一首",
+    next: "下一首",
+    volumeUp: "增加音量",
+    volumeReduce: "降低音量",
+    openSearch: "打开搜索",
+    turnOffLyrics: "关闭歌词",
+  }
 };

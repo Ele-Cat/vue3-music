@@ -2,22 +2,22 @@
   <el-icon :size="20">
     <Setting class="icon" @click="settingsVisible = true" />
   </el-icon>
-  <el-drawer v-model="settingsVisible" :title="$t('settings.settings')" direction="rtl" append-to-body lock-scroll class="settings-drawer">
+  <el-drawer v-model="settingsVisible" :title="$t('settings.settings')" direction="rtl" append-to-body lock-scroll
+    class="settings-drawer">
     <el-text size="large" tag="p">{{ $t("settings.general") }}</el-text>
 
-    <el-form :model="form" label-width="100px" style="max-width: 600px">
+    <el-form :model="form" label-width="140px" style="max-width: 600px">
       <el-form-item :label="$t('settings.theme') + ' :'">
-        <el-tooltip
-          :content="isDark ? $t('settings.switchToLightMode') : $t('settings.switchToDarkMode')"
-          placement="top-start"
-        >
+        <el-tooltip :content="isDark ? $t('settings.switchToLightMode') : $t('settings.switchToDarkMode')"
+          placement="top-start">
           <el-switch v-model="isDark" style="margin-right:6px;"></el-switch>
         </el-tooltip>
         {{ isDark ? $t('settings.dark') : $t('settings.light') }}
       </el-form-item>
       <el-form-item :label="$t('settings.language') + ' :'">
         <el-select v-model="lang" placeholder="请选择" @change="changeLang" style="max-width: 200px;">
-          <el-option :label="language.label" :value="language.value" v-for="language in languages" :key="language.value" />
+          <el-option :label="language.label" :value="language.value" v-for="language in languages"
+            :key="language.value" />
         </el-select>
       </el-form-item>
     </el-form>
@@ -26,24 +26,26 @@
 
     <el-text size="large" tag="p">{{ $t("settings.shortCuts") }}</el-text>
 
-    <el-form :model="formState" label-width="100px">
-      <el-form-item label="播放/暂停"> <span>Space</span> </el-form-item>
-      <el-form-item label="上一首">
+    <el-form :model="formState" label-width="140px">
+      <el-form-item :label="$t('shortCuts.playOrPause') + ' :'">
+        <span>Space</span>
+      </el-form-item>
+      <el-form-item :label="$t('shortCuts.previous') + ' :'">
         <span>{{ useSystemStore.ctrlOrCommand() }}</span> + <span class="key">←</span>
       </el-form-item>
-      <el-form-item label="下一首">
+      <el-form-item :label="$t('shortCuts.next') + ' :'">
         <span>{{ useSystemStore.ctrlOrCommand() }}</span> + <span class="key">→</span>
       </el-form-item>
-      <el-form-item label="增加音量">
+      <el-form-item :label="$t('shortCuts.volumeUp') + ' :'">
         <span>{{ useSystemStore.ctrlOrCommand() }}</span> + <span class="key">↑</span>
       </el-form-item>
-      <el-form-item label="降低音量">
+      <el-form-item :label="$t('shortCuts.volumeReduce') + ' :'">
         <span>{{ useSystemStore.ctrlOrCommand() }}</span> + <span class="key">↓</span>
       </el-form-item>
-      <el-form-item label="打开搜索">
+      <el-form-item :label="$t('shortCuts.openSearch') + ' :'">
         <span>{{ useSystemStore.ctrlOrCommand() }}</span> + <span class="key">M</span>
       </el-form-item>
-      <el-form-item label="关闭歌词"> <span>Esc</span> </el-form-item>
+      <el-form-item :label="$t('shortCuts.turnOffLyrics') + ' :'"> <span>Esc</span> </el-form-item>
     </el-form>
   </el-drawer>
 </template>

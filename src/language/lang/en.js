@@ -1,6 +1,7 @@
 export default {
   language: "English",
   settings: {
+    settings: "Settings",
     general: "General",
     theme: "Theme",
     light: "Light",

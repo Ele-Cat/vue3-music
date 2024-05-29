@@ -1,5 +1,5 @@
 import { useSystemStore } from "@/store/modules/system";
-import { useMusicStore } from "@/store/modules/music";
+// import { useMusicStore } from "@/store/modules/music";
 import eventBus from '@/utils/eventBus';
 
 const ctrlKey = 17,

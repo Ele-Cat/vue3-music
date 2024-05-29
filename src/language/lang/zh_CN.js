@@ -1,6 +1,7 @@
 export default {
   language: "简体中文",
   settings: {
+    settings: "设置",
     general: "常规",
     theme: "主题",
     light: "亮色",

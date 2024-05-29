@@ -13,7 +13,9 @@ export const useSystemStore = defineStore("musicSystem", {
   state: () => {
     return {
       settings,
+      platform: "win",
       activeNav: "home", // 当前聚焦的工具栏目
+      version: version,
     };
   },
   actions: {
@@ -46,6 +48,7 @@ export const useSystemStore = defineStore("musicSystem", {
       }
     },
     ctrlOrCommand() {
+      this.getPlatform()
       return this.platform === "win" ? "Ctrl" : "⌘";
     },
     reset() {

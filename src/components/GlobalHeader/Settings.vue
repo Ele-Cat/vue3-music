@@ -17,8 +17,7 @@
       </el-form-item>
       <el-form-item :label="$t('settings.language') + ' :'">
         <el-select v-model="lang" placeholder="请选择" @change="changeLang" style="max-width: 200px;">
-          <el-option label="简体中文" value="zh_CN" />
-          <el-option label="English" value="en" />
+          <el-option :label="language.label" :value="language.value" v-for="language in languages" :key="language.value" />
         </el-select>
       </el-form-item>
     </el-form>
@@ -56,6 +55,7 @@ import useStore from "@/store";
 const { useSystemStore } = useStore();
 const { proxy } = getCurrentInstance();
 import { isDark } from "@/hooks/theme";
+import { languages } from "@/utils/enums"
 
 const settingsVisible = ref(true)
 

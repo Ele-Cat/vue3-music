@@ -1,15 +1,59 @@
 <template>
-  <div>
-    nav
+  <div class="navs">
+    <p v-for="nav in navs" class="nav" :key="nav.value" :class="{ active: nav.value === activeNav }"
+      @click="handleNavChange(nav.value)">{{ nav.label }}</p>
   </div>
 </template>
 
-<script>
-export default {
+<script setup>
+import { storeToRefs } from "pinia";
+import useStore from "@/store";
+const { useSystemStore } = useStore();
 
+const { activeNav } = storeToRefs(useSystemStore)
+
+const navs = reactive([
+  {
+    label: "首页",
+    value: "home",
+  },
+  {
+    label: "搜索",
+    value: "search",
+  }
+])
+
+const handleNavChange = e => {
+  useSystemStore.changeNav(e);
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
+.navs {
+  display: flex;
+  align-items: center;
 
+  .nav {
+    cursor: pointer;
+    margin: 0 16px 0 10px;
+    font-size: 14px;
+    position: relative;
+    line-height: 50px;
+    transition: all .3s;
+
+    &.active, &:hover {
+      font-weight: bold;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: -10px;
+        right: -10px;
+        bottom: -1px;
+        height: 2px;
+        background-color: var(--ep-color-primary);
+      }
+    }
+  }
+}
 </style>

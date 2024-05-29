@@ -17,7 +17,7 @@
 
 <style lang="scss">
 .global-header {
-  height: 50px;
+  height: 56px;
 
   .header-fixed {
     position: fixed;
@@ -31,8 +31,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid var(--ep-border-color);
-    box-shadow: 0 5px 15px var(--ep-border-color, 0.2);
+    // border-bottom: 1px solid var(--ep-border-color);
+    box-shadow: var(--ep-box-shadow-light);
 
     .logo-box {
       display: flex;

@@ -13,12 +13,15 @@ export const useSystemStore = defineStore("musicSystem", {
   state: () => {
     return {
       settings,
-      activeMenu: "home", // 当前聚焦的工具栏目
+      activeNav: "home", // 当前聚焦的工具栏目
     };
   },
   actions: {
     changeTitle(title) {
       this.settings.title = title;
+    },
+    changeNav(nav) {
+      this.activeNav = nav
     },
     randomWallpaper() {
       // https://api.lolimi.cn/?action=doc&id=98

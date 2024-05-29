@@ -14,6 +14,7 @@
 <script setup>
 import { getCurrentInstance } from "vue";
 import { storeToRefs } from "pinia";
+console.log('ss')
 import useStore from "@/store";
 const { useSystemStore } = useStore();
 const { proxy } = getCurrentInstance();

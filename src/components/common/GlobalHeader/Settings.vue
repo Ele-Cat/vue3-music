@@ -10,7 +10,7 @@
 <script setup>
 import Settings from '../Settings/Index.vue'
 
-const settingsVisible = ref(false)
+const settingsVisible = ref(true)
 </script>
 
 <style lang="scss">

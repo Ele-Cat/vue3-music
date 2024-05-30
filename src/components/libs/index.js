@@ -3,8 +3,6 @@
 // 参数：1. 目录  2. 是否加载子目录  3. 加载的正则匹配
 const importFn = import.meta.glob('./*.vue');
 //引入
-import { PerfectScrollbarPlugin } from 'vue3-perfect-scrollbar';
-import 'vue3-perfect-scrollbar/style.css';
 import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 // console.dir(Object.keys(importFn)) // 文件名称数组
 
@@ -20,17 +18,10 @@ export default {
       app.component(componentName, component);
     });
 
+    // 批量注册ElementPlus图标
     for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
       app.component(key, component)
     }
-
-    app.use(PerfectScrollbarPlugin, {
-      watchOptions: true,
-      options: {
-        minScrollbarLength: 38, // 设定最小滚动条高度
-        // maxScrollbarLength: 200, // 设定最大滚动条高度
-      }
-    })
 
     // 定义指令
     defineDirective(app);

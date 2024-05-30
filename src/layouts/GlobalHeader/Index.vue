@@ -12,7 +12,9 @@
 </template>
 
 <script setup>
-
+import Logo from "@/components/Logo/Index.vue"
+import Navs from "@/components/Navs/Index.vue"
+import Settings from "@/components/Settings/Index.vue"
 </script>
 
 <style lang="scss">

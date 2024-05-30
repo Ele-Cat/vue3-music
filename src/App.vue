@@ -11,7 +11,7 @@ import useStore from "@/store";
 import { version } from "@/utils/utils";
 const { useSystemStore } = useStore();
 import { listenGlobalKeyDown } from "@/utils/shortcutKey";
-import GlobalHeader from '@/components/GlobalHeader/Index.vue';
+import GlobalHeader from '@/layouts/GlobalHeader/Index.vue';
 import Pages from '@/views/Index.vue';
 
 onMounted(() => {

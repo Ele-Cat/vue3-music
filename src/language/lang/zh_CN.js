@@ -15,8 +15,8 @@ export default {
     playOrPause: "播放/暂停",
     previous: "上一首",
     next: "下一首",
-    volumeUp: "增加音量",
-    volumeReduce: "降低音量",
+    increaseVolume: "增加音量",
+    decreaseVolume: "降低音量",
     openSearch: "打开搜索",
     turnOffLyrics: "关闭歌词",
   }

@@ -1,2 +1,6 @@
-// import dark theme
 @use "element-plus/theme-chalk/src/dark/css-vars.scss" as *;
+
+.ep-drawer__title {
+  font-weight: bold;
+  color: var(--ep-text-color-regular);
+}

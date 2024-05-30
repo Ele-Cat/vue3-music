@@ -4,13 +4,13 @@
   </el-icon>
   <el-drawer v-model="settingsVisible" :title="$t('settings.settings')" direction="rtl" append-to-body lock-scroll
     class="settings-drawer">
-    <el-text size="large" tag="p">{{ $t("settings.general") }}</el-text>
+    <el-text size="large" tag="b">{{ $t("settings.general") }}</el-text>
 
     <el-form :model="form" label-width="140px" style="max-width: 600px">
       <el-form-item :label="$t('settings.theme') + ' :'">
         <el-tooltip :content="isDark ? $t('settings.switchToLightMode') : $t('settings.switchToDarkMode')"
           placement="top-start">
-          <el-switch v-model="isDark" style="margin-right:6px;"></el-switch>
+          <el-switch v-model="isDark" style="margin-right:10px;"></el-switch>
         </el-tooltip>
         {{ isDark ? $t('settings.dark') : $t('settings.light') }}
       </el-form-item>
@@ -24,35 +24,16 @@
 
     <el-divider />
 
-    <el-text size="large" tag="p">{{ $t("settings.shortCuts") }}</el-text>
+    <el-text size="large" tag="b">{{ $t("settings.shortCuts") }}</el-text>
 
-    <el-form :model="formState" label-width="140px">
-      <el-form-item :label="$t('shortCuts.playOrPause') + ' :'">
-        <span>Space</span>
-      </el-form-item>
-      <el-form-item :label="$t('shortCuts.previous') + ' :'">
-        <span>{{ useSystemStore.ctrlOrCommand() }}</span> + <span class="key">←</span>
-      </el-form-item>
-      <el-form-item :label="$t('shortCuts.next') + ' :'">
-        <span>{{ useSystemStore.ctrlOrCommand() }}</span> + <span class="key">→</span>
-      </el-form-item>
-      <el-form-item :label="$t('shortCuts.volumeUp') + ' :'">
-        <span>{{ useSystemStore.ctrlOrCommand() }}</span> + <span class="key">↑</span>
-      </el-form-item>
-      <el-form-item :label="$t('shortCuts.volumeReduce') + ' :'">
-        <span>{{ useSystemStore.ctrlOrCommand() }}</span> + <span class="key">↓</span>
-      </el-form-item>
-      <el-form-item :label="$t('shortCuts.openSearch') + ' :'">
-        <span>{{ useSystemStore.ctrlOrCommand() }}</span> + <span class="key">M</span>
-      </el-form-item>
-      <el-form-item :label="$t('shortCuts.turnOffLyrics') + ' :'"> <span>Esc</span> </el-form-item>
-    </el-form>
+    <ShortCuts />
   </el-drawer>
 </template>
 
 <script setup>
 import { getCurrentInstance } from "vue";
 import { storeToRefs } from "pinia";
+import ShortCuts from '../ShortCuts/Index.vue'
 import useStore from "@/store";
 const { useSystemStore } = useStore();
 const { proxy } = getCurrentInstance();
@@ -80,11 +61,12 @@ const changeLang = (e) => {
 }
 
 .ep-text {
+  display: block;
   margin-bottom: 20px;
 }
 
 .settings-drawer {
-  width: 40% !important;
+  width: 480px !important;
 }
 
 @media screen and (max-width: 768px) {

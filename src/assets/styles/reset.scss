@@ -1,3 +1,7 @@
+html {
+  cursor: url(/blue.cur), auto;
+}
+
 body {
   font-family: Inter, system-ui, Avenir, "Helvetica Neue", Helvetica,
     "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial,
@@ -11,14 +15,45 @@ a {
   color: var(--ep-color-primary);
 }
 
-code {
-  border-radius: 2px;
-  padding: 2px 4px;
-  background-color: var(--ep-color-primary-light-9);
-  color: var(--ep-color-primary);
+p {
+  margin: 0;
+}
+
+.bf {
+  backdrop-filter: saturate(500%) blur(10px);
+}
+
+img {
+  // pointer-events: none;
+  -webkit-user-drag: none;
+  // user-drag: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  max-width: 100%;
+}
+
+// 设定滚轮
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  box-shadow: inset 0 0 5px #cac8c6;
+  background: #cac8c6;
+}
+::-webkit-scrollbar-track {
+  background: 0 0;
+  border-radius: 1px;
+}
+
+:focus {
+  outline: none;
 }
 
 ::selection {
-  background-color: #e54d42 !important;
+  background-color: var(--ep-color-primary) !important;
   color: #fbbd08 !important;
 }

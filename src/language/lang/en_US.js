@@ -15,8 +15,8 @@ export default {
     playOrPause: "Play/Pause",
     previous: "Previous song",
     next: "Next song",
-    volumeUp: "Volume up",
-    volumeReduce: "Volume reduce",
+    increaseVolume: "Increase volume",
+    decreaseVolume: "Decrease volume",
     openSearch: "Open search",
     turnOffLyrics: "Turn off lyrics",
   }

@@ -9,12 +9,36 @@ import { ElementPlusResolver } from "unplugin-vue-components/resolvers"; // 对�
 export default defineConfig(({ mode }) => {
   const { VITE_BASE_PATH } = loadEnv(mode, process.cwd());
   return {
+    base: VITE_BASE_PATH,
+    server: {
+      host: "localhost",
+      open: true,
+      port: 9999,
+      // proxy: {
+      //   '/liumingye': {
+      //     target: 'https://api.liumingye.cn', // 设置目标域名
+      //     changeOrigin: true, // 开启跨域
+      //     rewrite: (path) => path.replace(/^\/liumingye/, ''), // 将请求路径中的/api替换为空
+      //     headers: {
+      //       // 如果需要，可以设置自定义请求头
+      //       // 'X-Requested-With': 'XMLHttpRequest'
+      //     }
+      //   }
+      // }
+    },
     css: {
       preprocessorOptions: {
         scss: {
           // 自动导入定制化样式进行文件覆盖
           additionalData: `@use "@/assets/styles/theme/index.scss" as *;`,
         },
+      },
+    },
+    resolve: {
+      // ↓路径别名，主要是这部分
+      alias: {
+        "@": resolve(__dirname, "./src"),
+        'vue': 'vue/dist/vue.esm-bundler.js'
       },
     },
     plugins: [
@@ -33,21 +57,9 @@ export default defineConfig(({ mode }) => {
         ],
       }),
     ],
-    resolve: {
-      // ↓路径别名，主要是这部分
-      alias: {
-        "@": resolve(__dirname, "./src"),
-        'vue': 'vue/dist/vue.esm-bundler.js'
-      },
-    },
-    base: VITE_BASE_PATH,
-    server: {
-      host: "localhost",
-      open: true,
-      port: 9999,
-    },
     build: {
       chunkSizeWarningLimit: 5000, // 设置你希望的块大小警告限制，单位是字节
     },
+    
   };
 });

@@ -6,9 +6,11 @@
 </template>
 
 <script>
-export default {
+// import axios from 'axios';
 
-}
+// axios.post("/liumingye/m/api/artist/list").then(res => {
+//   console.log(res);
+// })
 </script>
 
 <style>

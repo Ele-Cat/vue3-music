@@ -35,24 +35,28 @@ const handleNavChange = e => {
 
   .nav {
     cursor: pointer;
-    margin: 0 16px 0 10px;
+    margin: 0 6px 0 10px;
     font-size: 14px;
     position: relative;
     line-height: 50px;
     transition: all .3s;
+    padding: 0 10px;
 
-    &.active, &:hover {
-      font-weight: bold;
+    &.active {
+      // font-weight: bold;
 
       &::after {
         content: "";
         position: absolute;
-        left: -10px;
-        right: -10px;
+        left: 0;
+        right: 0;
         bottom: -1px;
         height: 2px;
         background-color: var(--ep-color-primary);
       }
+    }
+    &:hover {
+      color: var(--ep-color-primary);
     }
   }
 }

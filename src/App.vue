@@ -1,32 +1,23 @@
 <template>
   <el-config-provider namespace="ep">
+    <MainBg />
     <GlobalHeader />
-
-    <Pages />
+    <MainBox class="main-box" />
   </el-config-provider>
 </template>
 
 <script setup>
 import useStore from "@/store";
-import { version } from "@/utils/utils";
 const { useSystemStore } = useStore();
 import { listenGlobalKeyDown } from "@/utils/shortcutKey";
-import GlobalHeader from '@/layouts/GlobalHeader/Index.vue';
-import Pages from '@/views/Index.vue';
+
+const MainBg = defineAsyncComponent(() => import('@/components/MainBg/Index.vue'));
+const GlobalHeader = defineAsyncComponent(() => import('@/layouts/GlobalHeader/Index.vue'));
+const MainBox = defineAsyncComponent(() => import('@/views/Index.vue'));
 
 onMounted(() => {
   listenGlobalKeyDown();
   useSystemStore.getPlatform();
-
-  if (useSystemStore.version != version) {
-    notify({
-      type: "warning",
-      title: "提示",
-      content: "系统组件更新啦，快去组件商城看看吧~",
-      duration: 0,
-    })
-    useSystemStore.version = version;
-  }
 });
 
 document.addEventListener("visibilitychange", handleVisibilityChange, false);
@@ -50,4 +41,16 @@ watch(
 );
 </script>
 
-<style scoped></style>
+<style lang="scss">
+@import url(//at.alicdn.com/t/c/font_4284553_hsd7d71rdmr.css);
+#app {
+  height: 100vh;
+  overflow: hidden;
+  // display: flex;
+  // flex-direction: column;
+  // background: url(https://bing.img.run/rand.php) no-repeat 100% center / cover;
+  .main-box {
+    flex: 1;
+  }
+}
+</style>

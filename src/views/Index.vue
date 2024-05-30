@@ -1,8 +1,7 @@
 <template>
-  <div>
+  <el-scrollbar height="calc(100vh - 56px)">
     <component :is="activePage" />
-    {{ activeNav }}
-  </div>
+  </el-scrollbar>
 </template>
 
 <script setup>

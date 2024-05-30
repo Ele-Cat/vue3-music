@@ -1,13 +1,119 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" href="/logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MyFreeMP3</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      .loading {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        color: #333;
+      }
+      .radar-spinner,
+      .radar-spinner * {
+        box-sizing: border-box;
+      }
+
+      .radar-spinner {
+        height: 100px;
+        width: 100px;
+        position: relative;
+      }
+
+      .radar-spinner .circle {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        animation: radar-spinner-animation 2s infinite;
+      }
+
+      .radar-spinner .circle:nth-child(1) {
+        padding: calc(100px * 5 * 2 * 0 / 110);
+        animation-delay: 300ms;
+      }
+
+      .radar-spinner .circle:nth-child(2) {
+        padding: calc(100px * 5 * 2 * 1 / 110);
+        animation-delay: 300ms;
+      }
+
+      .radar-spinner .circle:nth-child(3) {
+        padding: calc(100px * 5 * 2 * 2 / 110);
+        animation-delay: 300ms;
+      }
+
+      .radar-spinner .circle:nth-child(4) {
+        padding: calc(100px * 5 * 2 * 3 / 110);
+        animation-delay: 0ms;
+      }
+
+      .radar-spinner .circle-inner,
+      .radar-spinner .circle-inner-container {
+        height: 100%;
+        width: 100%;
+        border-radius: 50%;
+        border: calc(60px * 5 / 110) solid transparent;
+      }
+
+      .radar-spinner .circle-inner {
+        border-left-color: #df1032;
+        border-right-color: #df1032;
+      }
+
+      @keyframes radar-spinner-animation {
+        50% {
+          transform: rotate(180deg);
+        }
+        100% {
+          transform: rotate(0deg);
+        }
+      }
+    </style>
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <div class="loading">
+        <div class="radar-spinner">
+          <div class="circle">
+            <div class="circle-inner-container">
+              <div class="circle-inner"></div>
+            </div>
+          </div>
+
+          <div class="circle">
+            <div class="circle-inner-container">
+              <div class="circle-inner"></div>
+            </div>
+          </div>
+
+          <div class="circle">
+            <div class="circle-inner-container">
+              <div class="circle-inner"></div>
+            </div>
+          </div>
+
+          <div class="circle">
+            <div class="circle-inner-container">
+              <div class="circle-inner"></div>
+            </div>
+          </div>
+        </div>
+        <p>正在努力加载页面，请耐心等候...</p>
+      </div>
+    </div>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>

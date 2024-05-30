@@ -10,6 +10,9 @@ export default {
     switchToDarkMode: "Switch to dark mode",
     language: "Language",
     shortCuts: "ShortCuts",
+    info: "System info",
+    originCode: "Origin code",
+    jump: "Jump",
   },
   shortCuts: {
     playOrPause: "Play/Pause",

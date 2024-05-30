@@ -1,6 +1,6 @@
 <template>
   <div class="global-header">
-    <div class="header-fixed">
+    <div class="header-fixed bf">
       <div class="logo-box">
         <Logo class="logo" />
         <img src="https://visitor-badge.laobi.icu/badge?page_id=elecat.MyFreeMP3&right_color=%23e60026" alt="visitors">
@@ -18,6 +18,15 @@ import Settings from "@/components/Settings/Index.vue"
 </script>
 
 <style lang="scss">
+@function hexToRgba($hex, $alpha: 1) {
+  $red:   red($hex);
+  $green: green($hex);
+  $blue:  blue($hex);
+  
+  @return rgba($red, $green, $blue, $alpha);
+}
+$hexColor: #ffffff;
+
 .global-header {
   height: 56px;
 
@@ -27,9 +36,10 @@ import Settings from "@/components/Settings/Index.vue"
     width: calc(100vw - 30px);
     height: 50px;
     padding: 0 15px;
-    background-image: radial-gradient(transparent 1px, var(--ep-bg-color) 1px);
-    background-size: 4px 4px;
-    backdrop-filter: saturate(50%) blur(4px);
+    // background-color: hexToRgba($hexColor, 0.8);
+    background-color: rgba(255, 255, 255, 0.8);
+    // background-image: radial-gradient(transparent 1px, var(--ep-bg-color) 1px);
+    // background-size: 4px 4px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -49,6 +59,13 @@ import Settings from "@/components/Settings/Index.vue"
     .navs {
       flex: 1;
       padding: 0 20px;
+    }
+  }
+}
+.dark {
+  .global-header {
+    .header-fixed {
+      background-color: rgba(20, 20, 20, 0.8);
     }
   }
 }

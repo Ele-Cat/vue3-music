@@ -10,6 +10,9 @@ export default {
     switchToDarkMode: "切换至暗色模式",
     language: "语言",
     shortCuts: "快捷键",
+    info: "系统信息",
+    originCode: "查看源码",
+    jump: "点击跳转",
   },
   shortCuts: {
     playOrPause: "播放/暂停",

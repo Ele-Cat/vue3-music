@@ -6,11 +6,18 @@
     class="settings-drawer">
     <el-text size="large" tag="b">{{ $t("settings.general") }}</el-text>
 
-    <el-form :model="form" label-width="140px" style="max-width: 600px">
+    <el-form label-width="140px" style="max-width: 600px">
       <el-form-item :label="$t('settings.theme') + ' :'">
         <el-tooltip :content="isDark ? $t('settings.switchToLightMode') : $t('settings.switchToDarkMode')"
           placement="top-start">
-          <el-switch v-model="isDark" style="margin-right:10px;"></el-switch>
+          <el-switch v-model="isDark" style="margin-right:10px;">
+            <template #active-action>
+              <i class="ifishfont ifish-dark"></i>
+            </template>
+            <template #inactive-action>
+              <i class="ifishfont ifish-light"></i>
+            </template>
+          </el-switch>
         </el-tooltip>
         {{ isDark ? $t('settings.dark') : $t('settings.light') }}
       </el-form-item>
@@ -27,6 +34,22 @@
     <el-text size="large" tag="b">{{ $t("settings.shortCuts") }}</el-text>
 
     <ShortCuts />
+
+    <el-divider />
+
+    <el-text size="large" tag="b">{{ $t("settings.info") }}</el-text>
+
+    <el-form label-width="140px" style="max-width: 600px">
+      <el-form-item label="MyFreeMP3 :">
+        {{ packageJson.version }}
+      </el-form-item>
+      <el-form-item label="Vue :">
+        3.4.27
+      </el-form-item>
+      <el-form-item :label="$t('settings.originCode') + ' :'">
+        <el-button type="text" @click="jump">{{ $t('settings.jump') }}</el-button>
+      </el-form-item>
+    </el-form>
   </el-drawer>
 </template>
 
@@ -38,9 +61,10 @@ import useStore from "@/store";
 const { useSystemStore } = useStore();
 const { proxy } = getCurrentInstance();
 import { isDark } from "@/hooks/theme";
-import { languages } from "@/utils/enums"
+import { languages } from "@/utils/enums";
+import packageJson from '../../../package.json';
 
-const settingsVisible = ref(true)
+const settingsVisible = ref(false)
 
 const lang = ref(useSystemStore.settings.lang || "zh_CN");
 
@@ -48,6 +72,10 @@ const changeLang = (e) => {
   proxy.$i18n.locale = e;
   useSystemStore.settings.lang = e;
 };
+
+const jump = () => {
+  window.open("https://github.com/Ele-Cat/vue3-music", "_blank")
+}
 </script>
 
 <style lang="scss">

@@ -7,6 +7,7 @@
 
 <script setup>
 import { storeToRefs } from "pinia";
+import i18n from "@/language";
 import useStore from "@/store";
 const { useSystemStore } = useStore();
 
@@ -14,11 +15,11 @@ const { activeNav } = storeToRefs(useSystemStore)
 
 const navs = reactive([
   {
-    label: "首页",
+    label: computed(() => i18n.global.t("navs.home")),
     value: "home",
   },
   {
-    label: "搜索",
+    label: computed(() => i18n.global.t("navs.search")),
     value: "search",
   }
 ])

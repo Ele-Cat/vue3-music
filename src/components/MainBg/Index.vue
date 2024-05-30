@@ -1,20 +1,16 @@
 <template>
   <div class="main-bg">
-    <img
+    <div
       class="cover"
-      :src="useSystemStore.settings.wallpaper.url"
-      alt=""
-    />
-    <img
-      class="cover animate__fadeOut"
-      :src="useSystemStore.settings.wallpaper.url"
-      alt=""
-    />
+      :style="{
+        background: `url(${useSystemStore.settings.wallpaper.url}) no-repeat 100% center /cover`,
+        filter: `blur(${useSystemStore.settings.wallpaper.blur}px)`,
+      }"
+    ></div>
     <div
       class="mask"
       :style="{
-        backgroundColor: `rgba(0, 0, 0, ${useSystemStore.settings.wallpaper.mask / 100})`,
-        backdropFilter: `blur(${useSystemStore.settings.wallpaper.blur}px)`,
+        backgroundColor: `${isDark ? 'rgba(0, 0, 0, 0.4)' : 'rgba(255, 255, 255, 0.4)'}`,
       }"
     ></div>
   </div>
@@ -24,6 +20,7 @@
 import { watch, ref } from "vue";
 import useStore from "@/store";
 const { useSystemStore } = useStore();
+import { isDark } from "@/hooks/theme";
 
 const url = ref(useSystemStore.settings.wallpaper.url);
 watch(
@@ -47,30 +44,12 @@ watch(
     width: 100vw;
     height: 100vh;
     object-fit: cover;
-    transition: all 0.3s;
-  }
-  .animate__fadeOut {
-    width: 200vw;
-    max-width: 200vw;
-    height: 200vh;
-    left: -50vw;
-    top: -50vh;
-    animation: fadeOut ease-in-out 1s both;
+    transition: all 0.8s;
   }
   .mask {
     position: fixed;
     width: 100vw;
     height: 100vh;
-  }
-}
-
-@keyframes fadeOut {
-  0% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 0;
   }
 }
 </style>

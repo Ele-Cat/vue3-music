@@ -1,5 +1,5 @@
 <template>
-  <el-scrollbar height="calc(100vh - 56px)">
+  <el-scrollbar height="calc(100vh - 56px)" class="page-box">
     <component :is="activePage" />
   </el-scrollbar>
 </template>
@@ -27,4 +27,8 @@ const activePage = computed(() => {
 })
 </script>
 
-<style></style>
+<style>
+.page-box {
+  padding-top: 6px;
+}
+</style>

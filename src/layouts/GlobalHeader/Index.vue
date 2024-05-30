@@ -28,7 +28,7 @@ import Settings from "@/components/Settings/Index.vue"
 $hexColor: #ffffff;
 
 .global-header {
-  height: 56px;
+  height: 50px;
 
   .header-fixed {
     position: fixed;

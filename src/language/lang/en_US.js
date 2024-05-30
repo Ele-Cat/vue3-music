@@ -1,5 +1,9 @@
 export default {
   language: "English",
+  navs: {
+    home: "Home",
+    search: "Search",
+  },
   settings: {
     settings: "Settings",
     general: "General",

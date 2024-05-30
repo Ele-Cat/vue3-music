@@ -47,7 +47,7 @@
         3.4.27
       </el-form-item>
       <el-form-item :label="$t('settings.originCode') + ' :'">
-        <el-button type="text" @click="jump">{{ $t('settings.jump') }}</el-button>
+        <a href="https://github.com/Ele-Cat/vue3-music" target="_blank">{{ $t('settings.jump') }}</a>
       </el-form-item>
     </el-form>
   </el-drawer>
@@ -72,10 +72,6 @@ const changeLang = (e) => {
   proxy.$i18n.locale = e;
   useSystemStore.settings.lang = e;
 };
-
-const jump = () => {
-  window.open("https://github.com/Ele-Cat/vue3-music", "_blank")
-}
 </script>
 
 <style lang="scss">

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="home">
     首页
     <p v-for="n in 200">{{ n }}</p>
   </div>
@@ -13,6 +13,8 @@
 // })
 </script>
 
-<style>
-
+<style lang="scss">
+.home {
+  padding: 20px;
+}
 </style>

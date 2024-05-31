@@ -14,17 +14,10 @@ export default defineConfig(({ mode }) => {
       host: "localhost",
       open: true,
       port: 9999,
-      // proxy: {
-      //   '/liumingye': {
-      //     target: 'https://api.liumingye.cn', // 设置目标域名
-      //     changeOrigin: true, // 开启跨域
-      //     rewrite: (path) => path.replace(/^\/liumingye/, ''), // 将请求路径中的/api替换为空
-      //     headers: {
-      //       // 如果需要，可以设置自定义请求头
-      //       // 'X-Requested-With': 'XMLHttpRequest'
-      //     }
-      //   }
-      // }
+      cors: {
+        origin: ['https://ele-cat.github.io'],
+        credentials: true
+      },
     },
     css: {
       preprocessorOptions: {

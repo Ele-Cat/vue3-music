@@ -11,9 +11,13 @@ import useStore from "@/store";
 const { useSystemStore } = useStore();
 import { listenGlobalKeyDown } from "@/utils/shortcutKey";
 
-const MainBg = defineAsyncComponent(() => import('@/components/MainBg/Index.vue'));
-const GlobalHeader = defineAsyncComponent(() => import('@/layouts/GlobalHeader/Index.vue'));
-const MainBox = defineAsyncComponent(() => import('@/views/Index.vue'));
+import MainBg from "@/components/MainBg/Index.vue"
+import GlobalHeader from "@/layouts/GlobalHeader/Index.vue"
+import MainBox from "@/views/Index.vue"
+
+// const MainBg = defineAsyncComponent(() => import('@/components/MainBg/Index.vue'));
+// const GlobalHeader = defineAsyncComponent(() => import('@/layouts/GlobalHeader/Index.vue'));
+// const MainBox = defineAsyncComponent(() => import('@/views/Index.vue'));
 
 onMounted(() => {
   listenGlobalKeyDown();

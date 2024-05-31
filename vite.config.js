@@ -14,10 +14,6 @@ export default defineConfig(({ mode }) => {
       host: "localhost",
       open: true,
       port: 9999,
-      cors: {
-        origin: ['https://ele-cat.github.io'],
-        credentials: true
-      },
     },
     css: {
       preprocessorOptions: {
@@ -44,6 +40,7 @@ export default defineConfig(({ mode }) => {
         dts: "src/auto-import.d.ts",
       }),
       Components({
+        directoryAsNamespace: true,
         resolvers: [
           // 配置elementPlus采用sass样式配置系统
           ElementPlusResolver({ importStyle: "sass" }),
@@ -51,7 +48,7 @@ export default defineConfig(({ mode }) => {
       }),
     ],
     build: {
-      chunkSizeWarningLimit: 5000, // 设置你希望的块大小警告限制，单位是字节
+      chunkSizeWarningLimit: 50000, // 设置你希望的块大小警告限制，单位是字节
     },
     
   };

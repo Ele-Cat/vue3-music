@@ -5,7 +5,6 @@
         <Logo class="logo" />
         <img src="https://visitor-badge.laobi.icu/badge?page_id=elecat.MyFreeMP3&right_color=%23e60026" alt="visitors">
       </div>
-      <Navs class="navs" />
       <Settings />
     </div>
   </div>
@@ -13,20 +12,10 @@
 
 <script setup>
 import Logo from "@/components/Logo/Index.vue"
-import Navs from "@/components/Navs/Index.vue"
 import Settings from "@/components/Settings/Index.vue"
 </script>
 
 <style lang="scss">
-@function hexToRgba($hex, $alpha: 1) {
-  $red:   red($hex);
-  $green: green($hex);
-  $blue:  blue($hex);
-  
-  @return rgba($red, $green, $blue, $alpha);
-}
-$hexColor: #ffffff;
-
 .global-header {
   height: 50px;
 
@@ -36,7 +25,6 @@ $hexColor: #ffffff;
     width: calc(100vw - 30px);
     height: 50px;
     padding: 0 15px;
-    // background-color: hexToRgba($hexColor, 0.8);
     background-color: rgba(255, 255, 255, 0.8);
     // background-image: radial-gradient(transparent 1px, var(--ep-bg-color) 1px);
     // background-size: 4px 4px;
@@ -54,11 +42,6 @@ $hexColor: #ffffff;
         position: relative;
         margin: 16px 10px 0 0;
       }
-    }
-
-    .navs {
-      flex: 1;
-      padding: 0 20px;
     }
   }
 }

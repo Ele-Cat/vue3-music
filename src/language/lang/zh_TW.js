@@ -1,9 +1,5 @@
 export default {
   language: "繁體中文",
-  navs: {
-    home: "首頁",
-    search: "搜索",
-  },
   settings: {
     settings: "設置",
     general: "常規",

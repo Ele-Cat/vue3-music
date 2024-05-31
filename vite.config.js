@@ -40,7 +40,7 @@ export default defineConfig(({ mode }) => {
         dts: "src/auto-import.d.ts",
       }),
       Components({
-        // directoryAsNamespace: true,
+        directoryAsNamespace: true,
         resolvers: [
           // 配置elementPlus采用sass样式配置系统
           ElementPlusResolver({ importStyle: "sass" }),

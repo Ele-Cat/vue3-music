@@ -19,6 +19,7 @@ export const musicList = [
     name: "枫",
     artist: "周杰伦",
     pic: "https://y.qq.com/music/photo_new/T002R300x300M0000024bjiL2aocxT.jpg",
+    pic: "https://y.qq.com/music/photo_new/T002R300x300M0000024bjiL2aoc.jpg",
     lrc: "https://www.hhlqilongzhu.cn/ziyuan/Music/API/QQ_lrc.php?songmid=003KtYhg4frNXC&time=1717134019000&signature=63604438ad100345a2a52d1cae013126",
     url: "https://www.hhlqilongzhu.cn/ziyuan/Music/API/QQ_Getmusicinfo.php?songmid=003KtYhg4frNXC&time=1717134019000&signature=63604438ad100345a2a52d1cae013126",
   },

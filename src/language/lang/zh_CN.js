@@ -1,9 +1,5 @@
 export default {
   language: "简体中文",
-  navs: {
-    home: "首页",
-    search: "搜索",
-  },
   settings: {
     settings: "设置",
     general: "常规",

@@ -4,3 +4,23 @@
   font-weight: bold;
   color: var(--ep-text-color-regular);
 }
+
+
+
+.ep-table {
+  --ep-table-header-bg-color: rgba(29, 29, 29, 0.1);
+  --ep-table-tr-bg-color: transparent;
+  --ep-fill-color-lighter: rgba(129, 129, 129, 0.1);
+  --ep-table-row-hover-bg-color: rgba(29, 29, 29, 0.1);
+  --ep-table-border-color: rgba(29, 29, 29, 0.1);
+  background-color: transparent;
+  --ep-table-text-color: #333333;
+  --ep-table-header-text-color: #333333;
+}
+
+.dark {
+  .ep-table {
+    --ep-table-text-color: #dddddd;
+    --ep-table-header-text-color: #ffffff;
+  }
+}

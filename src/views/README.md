@@ -18,3 +18,7 @@
 - [随机cosplay套图](https://api.lolimi.cn/API/cosplay/api.php)
 
 https://www.hhlqilongzhu.cn/ziyuan/Music/API/QQ_Search.php?msg=%E5%91%A8%E6%9D%B0%E4%BC%A6&timestamp=1717118150&signature=8e914ee136c166a62dc3e1d8e5a07979
+
+- [QQ音乐排行榜](https://www.hhlqilongzhu.cn/api/dg_QQphb.php?id=1&type=) id:1=热歌榜,2=新歌榜,3=飙升榜,4=游戏音乐榜,5=动漫音乐榜,6=国风热歌榜,7=网络歌曲榜 type:0=列表,1=随机音乐信息
+- [qq音乐歌词](https://www.hhlqilongzhu.cn/api/dg_geci.php?msg=%E6%99%B4%E5%A4%A9&n=1&type=2)
+- [qq音乐热歌榜](https://www.hhlqilongzhu.cn/api/dg_List_mgmusic.php?type=2&n=)
